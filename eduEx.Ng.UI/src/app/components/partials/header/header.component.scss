@@ -1,0 +1,68 @@
+header{
+  position: relative;
+  background: white;
+  padding: 0;
+  //option 1
+    //border-bottom: 1px solid #e72929;
+  // option 2
+  border: 1px solid #e72929; // the red line
+  border-radius: 100rem;
+}
+
+a{
+  color: #af1313;
+}
+
+a:hover{
+  background: #e72929;
+  color: white;
+  cursor: pointer;
+}
+
+.container{
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+a.logo{
+  font-weight: bold;
+  padding: 1rem;
+}
+
+ul{
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  a{
+    padding: 1rem;
+    display: inline-block;
+  }
+}
+
+a span{
+  background: #ff4d4d;
+  color: white;
+  padding: 0.1rem 0.45rem;
+  border-radius: 100rem;
+  font-size: 0.9rem;
+}
+
+.menu-container{
+  position: relative;
+}
+
+.menu{
+  position: absolute;
+  z-index: 1;
+  background: whitesmoke;
+  display: none; // we don't always wanna show the menu
+  a{
+    width: 100%;
+    min-width: 8rem;
+  }
+}
+
+.menu-container:hover .menu{
+  display: block;
+}
