@@ -3,6 +3,7 @@ import { CourseService } from 'src/app/services/course.service';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/shared/models/user';
 import { Course } from 'src/app/shared/models/course';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -15,8 +16,14 @@ export class HomeComponent {
   mentors:User[] = [];
   getMentor = (userId:any) => { return this.mentors.find(user => user.id === userId)}
 
-  constructor(private courseService:CourseService,private userService:UserService){
-    this.courses = courseService.getAll();
+  constructor(private courseService:CourseService,
+              private userService:UserService,
+              private activatedRoute:ActivatedRoute)
+  {
+    activatedRoute.params.subscribe((params)=>{
+      if(params.searchTerm) {this.courses = this.courseService.getAllCoursesBySearchTerm(params.searchTerm);}
+      else {this.courses = courseService.getAll();}
+    })
     this.mentors = userService.getAllMentors();
   }
 

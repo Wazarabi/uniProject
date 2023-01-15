@@ -26,12 +26,22 @@
         1. Add sample courses/users
     4. Add images to assets @ -> src/assets/
 
-5. Create Course Service
+5. Create Course & User Service
     1. Generate >> ng g s /services/course
     2. Generate >> ng g s /services/user
     3. Add getAll methods to return the dummy data in both services
     6. Create Home component
         1. Generate >> ng g c /components/pages/home
+        2. Add ts
+        3. Add html
+        4. Add css
+
+6. Add Search 
+    1. Add method to course service
+    2. Add search route
+    3. Show search result in Home component
+    4. Generate search component
+        1. Add to home component
         2. Add ts
         3. Add html
         4. Add css

@@ -12,4 +12,8 @@ export class CourseService {
   getAll():Course[]{
     return sample_courses;
   }
+
+  getAllCoursesBySearchTerm(searchTerm:string):Course[]{
+    return this.getAll().filter((course) => course.title.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()));
+  }
 }

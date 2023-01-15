@@ -14,7 +14,7 @@ a{
 }
 
 a:hover{
-  background: #e72929;
+  background-color: #e72929;
   color: white;
   cursor: pointer;
 }
@@ -26,8 +26,13 @@ a:hover{
 }
 
 a.logo{
+  border-radius: 10rem 0 0 10rem;
+
   font-weight: bold;
   padding: 1rem;
+}
+a.rgt{
+  border-radius: 0 10rem 10rem 0;
 }
 
 ul{

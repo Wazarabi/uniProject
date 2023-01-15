@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './components/pages/home/home.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'', component:HomeComponent}, //Once we have a landing page we add it here
+  {path:'search/:searchTerm', component:HomeComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
