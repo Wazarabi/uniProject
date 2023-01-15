@@ -1,0 +1,34 @@
+<ul>
+  <li *ngFor="let course of courses">
+    <a routerLink="/course/{{course.id}}">
+      <img [src]="course.imageUrl" [alt]="getMentor(course.id)?.firstName">
+      <div class="content">
+        <div class="name">
+          {{getMentor(course.id)?.firstName + " " + getMentor(course.id)?.lastName}}
+        </div>
+        <span class="favorite {{course.favorite?'':'not'}}">
+          ❤
+        </span>
+        <div class="stars">
+          <bar-rating [(rate)]="course.stars" [max]="5"></bar-rating>
+        </div>
+        <div class="product-item-footer">
+          <div class="origins">
+            <span *ngFor="let lng of course.courseLanguages">
+              {{lng}}
+            </span>
+          </div>
+          <div class="response-time">
+            <span>🕒</span>
+            {{course.responseTime}} H
+          </div>
+          <div class="price">
+            <span>
+              {{course.baseHrate | currency}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>

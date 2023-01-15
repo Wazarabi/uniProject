@@ -21,8 +21,17 @@
 4. Create Models & Mock-Data
     1. Create Shared folder(shared between components & services) @ -> src/app/shared
     2. Create Model folder @ -> shared/models
-    3. Create course model file @ -> shared/models/course.ts
+    3. Create course && user model files @ -> shared/models/course.ts && user.ts
     3. Create mock data file data.ts at --> src/data.ts
-        1. Add sample courses
+        1. Add sample courses/users
     4. Add images to assets @ -> src/assets/
 
+5. Create Course Service
+    1. Generate >> ng g s /services/course
+    2. Generate >> ng g s /services/user
+    3. Add getAll methods to return the dummy data in both services
+    6. Create Home component
+        1. Generate >> ng g c /components/pages/home
+        2. Add ts
+        3. Add html
+        4. Add css

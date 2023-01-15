@@ -17,5 +17,7 @@ export class Course{
   firstCourseFree!:boolean;
   favorite!: boolean;
 
+  responseTime!:number;
+
   stars!: number;
 }
