@@ -4,7 +4,8 @@ import { HomeComponent } from './components/pages/home/home.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent}, //Once we have a landing page we add it here
-  {path:'search/:searchTerm', component:HomeComponent}
+  {path:'search/:searchTerm', component:HomeComponent},
+  {path:'tag/:tag', component:HomeComponent}
 ];
 
 @NgModule({

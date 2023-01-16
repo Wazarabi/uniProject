@@ -1,3 +1,4 @@
+import { Tag } from './app/shared/models/Tag';
 import { Course } from "./app/shared/models/course";
 import { Review } from "./app/shared/models/review";
 import { User } from "./app/shared/models/user";
@@ -227,6 +228,21 @@ export const sample_courses: Course[] = [
     responseTime: 12,
     stars: 4.5
   }]
+
+export const sample_tags:Tag[] = [
+  { name: 'All', count: 9 },
+  { name: 'Web Development', count: 1 },
+  { name: 'Guitar', count: 1 },
+  { name: 'Medical School Admissions', count: 1},
+  { name: 'Boxing', count: 1},
+  { name: 'Singing', count: 1},
+  { name: 'Piano', count: 1},
+  { name: 'SAT', count: 1},
+  { name: 'Android App Development', count: 1},
+  { name: 'Data Science', count: 1},
+]
+
+
 
 // export const sample_students: User[] = [
 //   {

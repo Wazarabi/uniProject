@@ -22,6 +22,7 @@ export class HomeComponent {
   {
     activatedRoute.params.subscribe((params)=>{
       if(params.searchTerm) {this.courses = this.courseService.getAllCoursesBySearchTerm(params.searchTerm);}
+      else if(params.tag) {this.courses = this.courseService.getAllCoursesByTag(params.tag);}
       else {this.courses = courseService.getAll();}
     })
     this.mentors = userService.getAllMentors();
