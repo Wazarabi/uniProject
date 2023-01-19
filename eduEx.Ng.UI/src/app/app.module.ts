@@ -8,6 +8,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { BarRatingModule } from "ngx-bar-rating";
 import { SearchComponent } from './components/partials/search/search.component';
 import { TagsComponent } from './components/partials/tags/tags.component';
+import { CoursePageComponent } from './components/pages/course-page/course-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TagsComponent } from './components/partials/tags/tags.component';
     HeaderComponent,
     HomeComponent,
     SearchComponent,
-    TagsComponent
+    TagsComponent,
+    CoursePageComponent
   ],
   imports: [
     BrowserModule,

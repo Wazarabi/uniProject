@@ -1,0 +1,44 @@
+<div *ngIf="course" class="container">
+  <img [src]="course.imageUrl" [alt]="course.title"/>
+
+  <div class="details">
+
+    <div class="header">
+      <span class="name">
+        {{course.title}}
+      </span>
+      <span class="favorite {{course.favorite?'':'not'}}">❤</span>
+    </div>
+
+    <div class="rating">
+      <bar-rating [(rate)]="course.stars" [max]="5"></bar-rating>
+    </div>
+
+    <div class="origins">
+      <span *ngFor="let language of course.courseLanguages">
+        {{language}}
+      </span>
+    </div>
+
+    <div class="tags">
+      <a *ngFor="let tag of course.courseSubjects" routerLink="/tag/{{tag}}">
+        {{tag}}
+      </a>
+    </div>
+
+    <div class="cook-time">
+      <span>
+        Response time <strong>{{course.responseTime}}</strong> hours.
+      </span>
+    </div>
+
+    <div class="price">
+      <span>
+        {{course.baseHrate | currency}}
+      </span>
+    </div>
+
+    <button>Contact Mentor</button>
+
+  </div>
+</div>

@@ -27,4 +27,8 @@ export class CourseService {
     this.getAll():
     this.getAll().filter(course => course.courseSubjects?.includes(tag));
   }
+
+  getCourseById(courseId:string):Course{
+    return this.getAll().find(course => course.id == courseId) ?? new Course();
+  }
 }

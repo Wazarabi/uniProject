@@ -30,7 +30,7 @@
     1. Generate >> ng g s /services/course
     2. Generate >> ng g s /services/user
     3. Add getAll methods to return the dummy data in both services
-    6. Create Home component
+    6. Genrate Home component
         1. Generate >> ng g c /components/pages/home
         2. Add ts
         3. Add html
@@ -41,6 +41,7 @@
     2. Add search route
     3. Show search result in Home component
     4. Generate search component
+        0. ng g c components/partials/search
         1. Add to home component
         2. Add ts
         3. Add html
@@ -49,13 +50,34 @@
 7. Tags Bar
     1. Create Tag model
     2. Add sample tags to data.ts
-    3. Food Service
+    3. Course Service
         1. Add get all tags method
-        2. Add get all foods by tag method
+        2. Add get all courses by tag method
     4. Add tags route
     5. Show tag result in Home component
     6. Generate Tags component
+        0. ng g c components/partials/tags
         1. Add to home component
+        2. Add ts
+        3. Add html
+        4. Add css
+        
+8. Course page
+    1. Add method to course service
+    2. Generate Course Page component
+        0. ng g c components/pages/course-page
+        1. Add route
+        2. Add ts
+        3. Add html
+        4. Add css
+
+9. Cart page
+    1. Create CartItem Model
+    2. Create Cart Model
+    3. Generate Carte Service  
+    4. Add Cart Button in Food page
+    5. Generate Cart page component
+        1. Add route
         2. Add ts
         3. Add html
         4. Add css

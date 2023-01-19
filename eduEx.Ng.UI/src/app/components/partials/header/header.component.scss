@@ -1,12 +1,19 @@
 header{
   position: relative;
-  background: white;
+  background-color: white;
   padding: 0;
   //option 1
     //border-bottom: 1px solid #e72929;
   // option 2
   border: 1px solid #e72929; // the red line
   border-radius: 100rem;
+  z-index: 999;
+}
+
+.sticky {
+  position: -webkit-sticky; /* for Safari */
+  position: sticky;
+  top: 0.3rem; /* position the element at the top of the viewport */
 }
 
 a{
