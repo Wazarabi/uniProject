@@ -9,6 +9,7 @@ export class Booking{
   priceForSession!:number;
   siteFees!:number;
   amountPaid!:number;
+  state!:boolean; // confirmed || waiting...
   //isRefund!:boolean;
   //cancelDate!:Date;
   //refundPaid!:number;

@@ -41,7 +41,7 @@
     2. Add search route
     3. Show search result in Home component
     4. Generate search component
-        0. ng g c components/partials/search
+        0. Generate >> ng g c components/partials/search
         1. Add to home component
         2. Add ts
         3. Add html
@@ -56,7 +56,7 @@
     4. Add tags route
     5. Show tag result in Home component
     6. Generate Tags component
-        0. ng g c components/partials/tags
+        0. Generate >> ng g c components/partials/tags
         1. Add to home component
         2. Add ts
         3. Add html
@@ -65,7 +65,7 @@
 8. Course page
     1. Add method to course service
     2. Generate Course Page component
-        0. ng g c components/pages/course-page
+        0. Generate >> ng g c components/pages/course-page
         1. Add route
         2. Add ts
         3. Add html
@@ -74,9 +74,9 @@
 9. Cart page
     1. Create CartItem Model
     2. Create Cart Model
-    3. Generate Carte Service  
-    4. Add Cart Button in Food page
-    5. Generate Cart page component
+    3. Generate >> ng g s services/cart **IMPORTANT**
+    4. Add Cart Button in Course page
+    5. Generate >> ng g c components/pages/cart-page
         1. Add route
         2. Add ts
         3. Add html
