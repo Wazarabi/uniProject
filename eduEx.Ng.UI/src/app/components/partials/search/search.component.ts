@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -18,5 +18,18 @@ export class SearchComponent {
     if(term)
     this.router.navigateByUrl('/search/'+term);
   }
+
+  // minimal solution :
+  // add [ngStyle]="{margin-top:marginTop, ...}"
+  @Input()
+  marginTop? = '3rem';
+  @Input()
+  marginBottom? = '1.5rem';
+  @Input()
+  height? = '3rem';
+  @Input()
+  inputWidth? = '20rem';
+  @Input()
+  buttonWidth? = '5rem';
 
 }

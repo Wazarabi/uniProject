@@ -14,7 +14,7 @@ export class CartService {
   constructor() { }
 
   addToCart(course:Course):void{
-    if (this.cart.totalCount){
+    if (this.cart.items.length){
       let cartItem = this.cart.items.find(item => item.course.id == course.id);
       if (cartItem) return;
     }
@@ -35,6 +35,13 @@ export class CartService {
     cartItem.sessionLength = length;
     cartItem.price = length * cartItem.course.baseHrate;
 
+    this.setCartToLocalStorage();
+  }
+
+  changeSessionDate(courseId:string, date:Date){
+    let cartItem = this.cart.items.find(item => item.course.id === courseId);
+    if (!cartItem) return;
+    cartItem.date = date;
     this.setCartToLocalStorage();
   }
 

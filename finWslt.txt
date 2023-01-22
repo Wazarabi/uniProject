@@ -1,2 +1,10 @@
-1:13:16 / 7:25:33 =>     https://www.youtube.com/watch?v=NFh9WEH0Zi4
+1:46:23 / 7:25:33 =>     https://www.youtube.com/watch?v=NFh9WEH0Zi4
+
+---> Add the gn material date picker
+---> Finish the cart page
+---> No result found component
+---> Make the search bar size customisable
+---> Add map api airbnb style
+---> continue using Node + Express
+
 

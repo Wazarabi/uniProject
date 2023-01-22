@@ -71,13 +71,28 @@
         3. Add html
         4. Add css
 
-9. Cart page
+9. Cart Service Logic
     1. Create CartItem Model
     2. Create Cart Model
     3. Generate >> ng g s services/cart **IMPORTANT**
-    4. Add Cart Button in Course page
+    4. Add Cart Button functionnality in Course page
     5. Generate >> ng g c components/pages/cart-page
         1. Add route
-        2. Add ts
-        3. Add html
-        4. Add css
+
+10. Cart page and Date Picker
+    1. Add ts
+    2. Generate the Reusable/Partial component : Title
+        1. Generate >> ng g c components/partials/title
+        2. Add ts / html / css
+    3. Add html
+    4. Add ng material date picker to project
+        1. npm install @angular/material
+        2. app.module.ts file :
+        import {MatDatepickerModule} from '@angular/material/datepicker';
+        import {MatFormFieldModule} from '@angular/material/form-field';
+        import { MatInputModule } from '@angular/material/input';
+        import { MatNativeDateModule } from '@angular/material/core';
+        import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+        3. add html + ts & import css : @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+    5. Add css
+    6. Update header component : inject cartService and subscribe to display real cartQuantity instead of mock data
