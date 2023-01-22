@@ -96,3 +96,38 @@
         3. add html + ts & import css : @import "~@angular/material/prebuilt-themes/indigo-pink.css";
     5. Add css
     6. Update header component : inject cartService and subscribe to display real cartQuantity instead of mock data
+
+11. No result found
+    1. Generate Not Found reusable components
+        0. Generate >> ng g c components/partials/not-found
+        1. Add ts
+        2. Add html
+        3. Add css
+    2. Add To Pages
+        1. Cart Page
+        2. Home Page
+        3. Course Page --> in case a bookmarked course is no longer available
+
+12. Connect to Backend 1
+    1. Create backend folder
+    2. npm init -y
+    3. npm install typescript
+    4. Create tsconfig.json + add configs (one time configs)
+    5. Create src folder
+    6. Create .gitignore
+    7. Copy data.ts to backend/src
+    8. npm install express cors
+    9. Create server.ts
+        1. install @types/express & @types/cors
+            @types/express is a package that contains TypeScript definitions for the Express.js library. These definitions provide additional information to the TypeScript compiler about the types and properties of the objects and functions exported by the Express.js library. This allows you to use the Express.js library in a TypeScript project with better type checking and IntelliSense support.
+        2. Add "hello" APIs
+    10. npm install nodemon ts-node --save-dev
+        if it was JS 2 run the app >> node server.js BUT we using TS soo ts-node is needed.
+        nodemon automatically uses ts-node once given a file
+    11. Add all the /api/courses APIs basicaly courseService from UI -> API
+
+
+13. Connect to Backend 2
+    11. Add urls.ts to frontend
+    12. Add HttpClient Module
+    13. Update food service

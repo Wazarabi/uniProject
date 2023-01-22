@@ -23,6 +23,7 @@ import { TagsComponent } from './components/partials/tags/tags.component';
 import { CoursePageComponent } from './components/pages/course-page/course-page.component';
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { TitleComponent } from './components/partials/title/title.component';
+import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { TitleComponent } from './components/partials/title/title.component';
     TagsComponent,
     CoursePageComponent,
     CartPageComponent,
-    TitleComponent
+    TitleComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
