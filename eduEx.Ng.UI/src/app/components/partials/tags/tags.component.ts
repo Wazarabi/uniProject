@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { CourseService } from 'src/app/services/course.service';
 import { Component } from '@angular/core';
 import { Tag } from 'src/app/shared/models/Tag';
@@ -10,7 +11,7 @@ import { Tag } from 'src/app/shared/models/Tag';
 export class TagsComponent {
   tags?:Tag[];
   constructor(courseService:CourseService){
-    this.tags = courseService.getAllTags();
+    courseService.getAllTags().subscribe(nextTags => this.tags = nextTags);
   }
 
 }

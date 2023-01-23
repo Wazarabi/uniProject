@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Component } from '@angular/core';
 import { CourseService } from 'src/app/services/course.service';
 import { UserService } from 'src/app/services/user.service';
@@ -20,10 +21,16 @@ export class HomeComponent {
               private userService:UserService,
               private activatedRoute:ActivatedRoute)
   {
-    activatedRoute.params.subscribe((params)=>{
-      if(params.searchTerm) {this.courses = this.courseService.getAllCoursesBySearchTerm(params.searchTerm);}
-      else if(params.tag) {this.courses = this.courseService.getAllCoursesByTag(params.tag);}
-      else {this.courses = courseService.getAll();}
+    let courseObservable:Observable<Course[]>;
+
+    activatedRoute.params.subscribe((params) => {
+      if(params.searchTerm) {courseObservable = this.courseService.getAllCoursesBySearchTerm(params.searchTerm);}
+      else if(params.tag) {courseObservable = this.courseService.getAllCoursesByTag(params.tag);}
+      else {courseObservable = courseService.getAll();}
+
+      courseObservable.subscribe(nextCourses => {
+        this.courses = nextCourses;
+      })
     })
     this.mentors = userService.getAllMentors();
   }

@@ -108,7 +108,7 @@
         2. Home Page
         3. Course Page --> in case a bookmarked course is no longer available
 
-12. Connect to Backend 1
+12. Basic Express Backend no database
     1. Create backend folder
     2. npm init -y
     3. npm install typescript
@@ -120,14 +120,25 @@
     9. Create server.ts
         1. install @types/express & @types/cors
             @types/express is a package that contains TypeScript definitions for the Express.js library. These definitions provide additional information to the TypeScript compiler about the types and properties of the objects and functions exported by the Express.js library. This allows you to use the Express.js library in a TypeScript project with better type checking and IntelliSense support.
-        2. Add "hello" APIs
+        2. Add "hello" GET APIs
     10. npm install nodemon ts-node --save-dev
-        if it was JS 2 run the app >> node server.js BUT we using TS soo ts-node is needed.
-        nodemon automatically uses ts-node once given a file
-    11. Add all the /api/courses APIs basicaly courseService from UI -> API
+            if it was JS 2 run the app >> node server.js 
+            BUT we using TS soo ts-node is needed.
+            nodemon automatically uses ts-node once given a file
+    11. Add to package.json
+            "scripts": {
+                "start": "cd src && nodemon server.ts", ... }
+    12. Add all the /api/courses APIs basicaly courseService from UI -> API
 
 
-13. Connect to Backend 2
-    11. Add urls.ts to frontend
-    12. Add HttpClient Module
-    13. Update food service
+13. Connect Front to Back
+    1. Add urls.ts to frontend 2 have a single place to manage API urls
+    2. Add HttpClientModule
+    3. Update course service to make http requests and return Observables
+    4. Update code & Subscribe to the courseObservable in :
+        1. Home Page 
+        2. Course Page
+        3. Tags Component
+    5. Change Course Page to display on *ngIf="course"
+
+
