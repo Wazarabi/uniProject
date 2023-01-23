@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { CoursePageComponent } from './components/pages/course-page/course-page.
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { TitleComponent } from './components/partials/title/title.component';
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
+import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 
 import { BarRatingModule } from "ngx-bar-rating";
 
@@ -22,6 +24,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
+
 
 
 
@@ -35,7 +38,8 @@ import { MatIconModule } from '@angular/material/icon';
     CoursePageComponent,
     CartPageComponent,
     TitleComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatNativeDateModule,
     BrowserAnimationsModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

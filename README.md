@@ -141,4 +141,12 @@
         3. Tags Component
     5. Change Course Page to display on *ngIf="course"
 
+14. Login Page
+    1. Generate component >> ng g c components/pages/login-page
+        1. Add to routes
+        2. Add ts : FormGroup, FormBuilder ,Validators & submit()
+        3. import ReactiveFormsModule in app.module !!
+        4. add html (form) --> how about making the repetitive code into partial components ?
+        5. add css
 
+        

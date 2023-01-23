@@ -1,3 +1,4 @@
+import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { CoursePageComponent } from './components/pages/course-page/course-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,7 +10,8 @@ const routes: Routes = [
   {path:'search/:searchTerm', component:HomeComponent},
   {path:'tag/:tag', component:HomeComponent},
   {path:'course/:id', component:CoursePageComponent},
-  {path:'cart-page', component:CartPageComponent}
+  {path:'cart-page', component:CartPageComponent},
+  {path:'login', component:LoginPageComponent}
 ];
 
 @NgModule({
