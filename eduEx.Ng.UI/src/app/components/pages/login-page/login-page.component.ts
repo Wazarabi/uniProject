@@ -1,3 +1,5 @@
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -9,13 +11,23 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginPageComponent implements OnInit{
   loginForm!:FormGroup;
   isSubmitted = false; // don't show validation errors by default
+  returnUrl = '';
 
-  constructor(private formBuilder:FormBuilder){}
+  constructor(
+    private formBuilder:FormBuilder,
+    private userService:UserService,
+    private activatedRoute:ActivatedRoute,
+    private router:Router){}
+
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
     email : ['', [Validators.required, Validators.email]],
     password : ['', Validators.required]
     });
+
+    // latest value of activatedRoute no need to subscribe
+    // queryParams : ...?returnUrl=/checkout
+    this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl;
   }
 
   // to avoid writing loginForm.controls.X we do the following :
@@ -27,9 +39,17 @@ export class LoginPageComponent implements OnInit{
     this.isSubmitted = true;
     if(this.loginForm.invalid) return;
 
-    alert(`email: ${this.fc.email.value},
-      password: ${this.fc.password.value}`);
+    this.userService.login(
+      {
+        email: this.fc.email.value,
+        password: this.fc.password.value
+      }
+    ).subscribe(() => {
+      this.router.navigateByUrl(this.returnUrl);
+    });
+    // () => we didn't get the user cauz we don't need it here
   }
+
 
 
 }

@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { COURSES_BY_SEARCH_URL, COURSES_URL, COURSES_TAGS_URL, COURSES_BY_TAG_URL, COURSE_BY_ID_URL } from './../shared/models/constants/urls';
+import { COURSES_BY_SEARCH_URL, COURSES_URL, COURSES_TAGS_URL, COURSES_BY_TAG_URL, COURSE_BY_ID_URL } from './../shared/constants/urls';
 import { HttpClient } from '@angular/common/http';
 import { Tag } from './../shared/models/Tag';
 import { Injectable } from '@angular/core';

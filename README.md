@@ -88,8 +88,8 @@
     4. Add ng material date picker to project
         1. npm install @angular/material
         2. app.module.ts file :
-        import {MatDatepickerModule} from '@angular/material/datepicker';
-        import {MatFormFieldModule} from '@angular/material/form-field';
+        import { MatDatepickerModule } from '@angular/material/datepicker';
+        import { MatFormFieldModule } from '@angular/material/form-field';
         import { MatInputModule } from '@angular/material/input';
         import { MatNativeDateModule } from '@angular/material/core';
         import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -146,7 +146,7 @@
         1. Add to routes
         2. Add ts : FormGroup, FormBuilder ,Validators & submit()
         3. import ReactiveFormsModule in app.module !!
-        4. add html (form) --> how about making the repetitive code into partial components ?
+        4. add html (form) --> how about making the repetitive code into partial components ? done 15 || 16
         5. add css
     2. Add Login API
         1. Use Json >> app.use(express.json());
@@ -155,3 +155,31 @@
         4. import jwt from jsonwebtoken in server.ts && install @types/jsonwebtoken
         5. generateToken & return user API "/api/users/login"
         6. Test using postman
+
+15. User Service <3
+    1. Generate User Service >> ng g s services/user
+        1. Generate User model
+        2. Add User Subject but only expose it outside the service as an observable
+        3. Add Login Method
+            1. Add User Urls constants/urls.ts
+            2. Generate IUserLogin interface
+            3. add login to user Service http.post(...
+               and pipe the result and tap(rxjs) it, tap returns same object so we still return an Observable<User>
+            4. Add ngx-toastr
+                1. npm install ngx-toastr
+                2. Import Module >> import { ToastrModule } from ngx-toastr';
+                3. Add styles in angular.json
+                    "styles": [..., "node_modules/ngx-toastr/toastr.css", ...
+                4. @import '../node_modules/ngx-toastr/toastr.css';
+                5. Functionnal toaster & config
+                    1. config toaster behavior ToasterModule.forRoot({timeOut:3000, ...})
+                    2. complete login fct in userService
+                        1. update userSubject.next(user);
+                        2. inject toastService.success(...)
+            5. User userService.login in submit() LoginPage
+               & subscribe to it (login) to route to the returnUrl
+            6. stop serving the frontend (cuz modifed angular.json)
+            7. cd /frontend && npm start
+
+
+

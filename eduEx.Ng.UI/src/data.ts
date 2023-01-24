@@ -1,7 +1,7 @@
 import { Tag } from './app/shared/models/Tag';
 import { Course } from "./app/shared/models/course";
 import { Review } from "./app/shared/models/review";
-import { User } from "./app/shared/models/user";
+import { User } from "./app/shared/models/User";
 
 export const sample_mentors: User[] = [
   {

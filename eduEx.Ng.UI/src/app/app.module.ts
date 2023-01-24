@@ -18,15 +18,13 @@ import { NotFoundComponent } from './components/partials/not-found/not-found.com
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 
 import { BarRatingModule } from "ngx-bar-rating";
+import { ToastrModule } from 'ngx-toastr';
 
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
-
-
-
 
 @NgModule({
   declarations: [
@@ -52,7 +50,12 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserAnimationsModule,
     MatIconModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot({
+      timeOut:3000,
+      positionClass:'toast-bottom-right',
+      newestOnTop:false
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
