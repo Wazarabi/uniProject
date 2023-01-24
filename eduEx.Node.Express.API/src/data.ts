@@ -1,9 +1,22 @@
+export const sample_students: any[] = [
+  {id:"0", firstName:"David", lastName:"Garcia", email:"david.garcia@gmail.com", password:"12345",address:"Dallas", token:"", isAdmin:false, isMentor:false},
+  {id:"1", firstName:"Jane", lastName:"Smith", email:"jane.smith@gmail.com", password:"12345",address:"New York City", token:"", isAdmin:false, isMentor:false},
+  {id:"2", firstName:"John", lastName:"Doe", email:"johndoe@gmail.com", password:"12345", address:"Los Angeles", token:"", isAdmin:false, isMentor:false},
+  {id:"3", firstName:"Mike", lastName:"Johnson", email:"mikej@gmail.com", password:"12345", address:"Chicago", token:"", isAdmin:false, isMentor:false},
+  {id:"4", firstName:"Emily", lastName:"Williams", email:"emilyw@gmail.com", password:"12345", address:"Houston", token:"", isAdmin:false, isMentor:false},
+  {id:"5", firstName:"Jessica", lastName:"Jones", email:"jessica.jones@gmail.com", password:"12345", address:"Phoenix", token:"", isAdmin:false, isMentor:false},
+  {id:"6", firstName:"Jacob", lastName:"Brown", email:"jacobb@gmail.com",  password:"12345", address:"Philadelphia", token:"", isAdmin:false, isMentor:false},
+  {id:"7", firstName:"Nathan", lastName:"Davis", email:"nathan.davis@gmail.com", password:"12345", address:"San Antonio", token:"", isAdmin:false, isMentor:false},
+  {id:"8", firstName:"Ashley", lastName:"Miller", email:"ashleym@gmail.com", password:"12345", address:"San Diego", token:"", isAdmin:false, isMentor:false}
+]
+
 export const sample_mentors: any[] = [
   {
     id:"0",
     firstName:"Thompson",
     lastName:"Davayne",
     email:"Thompson.Davayne@gmail.com",
+    password:"12345",
     address:"New York",
     token:"",
     isAdmin:false,
@@ -14,6 +27,7 @@ export const sample_mentors: any[] = [
     firstName: "Alice",
     lastName: "Johnson",
     email: "alice.johnson@piano-voice.com",
+    password:"12345",
     address: "New Jersey",
     token: "",
     isAdmin: false,
@@ -24,6 +38,7 @@ export const sample_mentors: any[] = [
     firstName: "Bob",
     lastName: "Williams",
     email: "bob.williams@math.com",
+    password:"12345",
     address: "Los Angeles",
     token: "",
     isAdmin: false,
@@ -34,6 +49,7 @@ export const sample_mentors: any[] = [
     firstName: "Charlie",
     lastName: "Jones",
     email: "charlie.jones@programming.com",
+    password:"12345",
     address: "Chicago",
     token: "",
     isAdmin: false,
@@ -44,6 +60,7 @@ export const sample_mentors: any[] = [
     firstName: "David",
     lastName: "Brown",
     email: "david.brown@history.com",
+    password:"12345",
     address: "Houston",
     token: "",
     isAdmin: false,
@@ -54,6 +71,7 @@ export const sample_mentors: any[] = [
     firstName: "Edward",
     lastName: "Miller",
     email: "edward.miller@fitness.com",
+    password:"12345",
     address: "Philadelphia",
     token: "",
     isAdmin: false,
@@ -64,6 +82,7 @@ export const sample_mentors: any[] = [
     firstName: "Olga",
     lastName: "Moore",
     email: "frank.moore@cooking.com",
+    password:"12345",
     address: "New Port",
     token: "",
     isAdmin: false,
@@ -74,6 +93,7 @@ export const sample_mentors: any[] = [
     firstName: "George",
     lastName: "Taylor",
     email: "george.taylor@design.com",
+    password:"12345",
     address: "San Francisco",
     token: "",
     isAdmin: false,
@@ -84,12 +104,15 @@ export const sample_mentors: any[] = [
     firstName: "Henrietta",
     lastName: "Anderson",
     email: "henry.anderson@photography.com",
+    password:"12345",
     address: "Los Angeles",
     token: "",
     isAdmin: false,
     isMentor: true
   }
 ]
+
+export const sample_users: any[] = sample_mentors.concat(sample_students);
 
 export const sample_courses: any[] = [
   {
@@ -157,7 +180,7 @@ export const sample_courses: any[] = [
       userId: "4",
       title: "Drawing and Painting for Beginners",
       aboutCourse: "Learn the basics of drawing and painting, including composition, color theory and brushstrokes.",
-      aboutUser:"Alice Bromberek is a professional musician, Soprano Opera singer, and a classical pianist. She had master piano classes and music education under the direction of Juilliard School of Music trained composer and pianist, Professor Cesar de la Cerda. Master advanced vocal training courses with the internationally renowned opera singers Soprano Renata Scotto and Tenor Yordi Ramiro.\nAlice has a Bachelor's Degree in Music Education (WV University, Virginia), Bachelor's Degree in Psychology (Suffield University) and, a Master's Degree in Counseling and Education (WV University, Virginia). Opera Training Certificate from the Metropolitan Opera House of New York.\nShe worked as an Elementary and Middle School Choir director and music teacher at the American School Foundation. Lead soprano at the Immaculata Church, University of San Diego. Taught at UCSD Performing Arts, music theory. She was the musical and theatrical consultant to the Men's Leadership Forum in San Diego for over 3 years.Mainly performances: Performing Opera arias with the Maiden Lane Opera Singer’s, San Francisco, CA. Soprano soloist at the Ensenada Orchestra performing several concerts, CA. She performed the Opera The Magic Flute by Mozart as The Queen of the Night at the National Institute of Fine Arts, Mexico City. The Phantom of the Opera as Christine, Pikes Peak, Colorado Center. She worked as a soprano soloist at the TV SKY Catholic channel. She is being performing Operas and concerts with the LS Opera of San Diego Company and several concerts at the Taci Opera Nights, New York City.\nShe has over 20 years of experience as a bilingual (English/Spanish) music teacher teaching piano, voice and music theory to students of all ages and levels. She works at the Chula Vista Academy of Music in San Diego, CA teaching voice, piano and music theory. ",
+      aboutUser:"Alice Bromberek is a professional musician, Soprano Opera singer, and a classical pianist.",
       imageUrl:"assets/superprof04.png",
       baseHrate:40,
       courseLanguages:["Eng","Fr","Arb"],
@@ -239,36 +262,11 @@ export const sample_tags:any[] = [
 
 
 
-// export const sample_students: User[] = [
-//   {
-//     id:"1",
-//     firstName:"DeDe",
-//     lastName:"DeDe",
-//     email:"DeDe@gmail.com",
-//     address:"MumBai",
-//     token:"",
-//     isAdmin:false,
-//     isMentor:false
-//   },
-//   {
-//     id:"2",
-//     firstName:"Barb",
-//     lastName:"Barb",
-//     email:"Barb@gmail.com",
-//     address:"Texas",
-//     token:"",
-//     isAdmin:false,
-//     isMentor:false
-//   }
-// ]
-
-
-
 // export const sample_review:Review[] = [
 //   {
 //     id:"0",
 //     courseId:"O",
-//     userId:"1",
+//     userId:"0",
 //     comment:"Perfect! We love his style. He's very nice, patient and easy to understand. We really liked the quizzing during the session to measure competency.",
 //     rating:5
 //   },

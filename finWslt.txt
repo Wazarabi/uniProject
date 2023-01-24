@@ -1,8 +1,4 @@
-2:27:20 / 7:25:33 =>     https://www.youtube.com/watch?v=NFh9WEH0Zi4
+2:48:45 / 7:25:33 =>     https://www.youtube.com/watch?v=NFh9WEH0Zi4
 
 ---> Landing page
 ---> Add map api airbnb style
----> continue the back end
-
-
-

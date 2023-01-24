@@ -141,12 +141,17 @@
         3. Tags Component
     5. Change Course Page to display on *ngIf="course"
 
-14. Login Page
+14. Login Page with Client side Validation (no css) && Login API with jwt
     1. Generate component >> ng g c components/pages/login-page
         1. Add to routes
         2. Add ts : FormGroup, FormBuilder ,Validators & submit()
         3. import ReactiveFormsModule in app.module !!
         4. add html (form) --> how about making the repetitive code into partial components ?
         5. add css
-
-        
+    2. Add Login API
+        1. Use Json >> app.use(express.json());
+        2. Add sample users in data.ts (everything is of type any for the moment)
+        3. Add JsonWebToken >> npm install jsonwebtoken
+        4. import jwt from jsonwebtoken in server.ts && install @types/jsonwebtoken
+        5. generateToken & return user API "/api/users/login"
+        6. Test using postman
