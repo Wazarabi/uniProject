@@ -182,4 +182,14 @@
             7. cd /frontend && npm start
 
 
+16. Synchronising the header component
+    1. Add Local Storage methods : set & get UserFromLocalStorage
+    2. setUserToLocalStorage after successful login & get it by default for userSubject
+    3. header userService.userObservable.subscribe && update HTML to display real user name
+    4. Hide LogIn from Header once we are loged in
+    5. Add Logout Method
+    6. Add userService.logout() to Header Component ts && update HTML to display accordingly
+
+
+
 
