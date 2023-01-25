@@ -191,5 +191,47 @@
     6. Add userService.logout() to Header Component ts && update HTML to display accordingly
 
 
+17. Create Reusable Components for Text Input & Client side Validation + Add 2 Login Page
+    1. Input Container
+        1. Generate >> ng g c components/partials/input-container
+        2. add ts with label & bgColor Input()
+        3. add html
+            1. add <ng-content></ng-content>
+            2. simplify selector app-input-container
+        4. add css
+        5. test that everything looks and works exactly as before
+    2. Input Validation
+        1. Generate >> ng g c components/partials/input-validation
+        2. ts Add VALIDATORS_MESSAGES = { x:'errorMsg', ... }
+        3. ts Add Input()s -> AbstractControl + when2showBoolean + errorMsg[]
+        4. Error msg handling checkValidation()
+            1. get error msgs from errors = this.control.errors 
+            2. get the keys errorKeys = Object.keys(errors)
+            3. this.errorMsg = errorKeys.map(key => VALIDATORS_MESSAGES[key])
+        5. Add life cycle hooks
+            1. ngOnInit -> is being used to set up two subscriptions: one for the form control's statusChanges and another for its valueChanges. 
+            These subscriptions allow the component to react to changes in the form control's status and value.
+            2. ngOnChanges -> react to external changes to the showErrorsWhen @Input()
+        6. Simplify Selector app-input-validation
+        7. Add HTML from login-page and addapt it to @Inputs
+    3. Text Input
+        1. Generate >> ng g c components/partials/text-input
+        2. ts Add Input()s <-- Input()s from *Input Container* && *Input Validation*
+        3. Add html just copy from login page
+            1. Add formControl getter this.control as FormControl (AbstractControl won't be accepted by the html <input>)
+            2. input>formControlName="email" --> input>[formControl]="formControl"
+            3. Simplify Selector app-text-input
+        4. Add CSS
+    4. Default Button
+        1. Generate >> ng g c components/partials/default-button
+        2. Add component @Input()_s & @Output()
+        *#rq:EventEmitter from '@angular/core'; & NOT FROM 'stream'*
+        3. Add html
+        4. Simplify Selector app-default-button
+        5. Add CSS
+    5. Test everything in the login page
+
+
+
 
 
