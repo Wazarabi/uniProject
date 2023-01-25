@@ -4,19 +4,27 @@
     2. Add (function, class ...)
     3. Generate (component, service ...)
 
+
+
 1. Install dev tools
     1. node
     2. @angular/cli
     3. git
 
+
+
 2. Create Angular App
     1. Create project folder : uniProject
     2. Generate Angular app >> ng new eduEx.NG.UI
+
+
 
 3. Create Header Component
     1. Generate >> ng g c /components/partials/header
     2. Add HTML
     3. Add CSS
+
+
 
 4. Create Models & Mock-Data
     1. Create Shared folder(shared between components & services) @ -> src/app/shared
@@ -25,6 +33,8 @@
     3. Create mock data file data.ts at --> src/data.ts
         1. Add sample courses/users
     4. Add images to assets @ -> src/assets/
+
+
 
 5. Create Course & User Service
     1. Generate >> ng g s /services/course
@@ -36,6 +46,8 @@
         3. Add html
         4. Add css
 
+
+
 6. Add Search 
     1. Add method to course service
     2. Add search route
@@ -46,6 +58,9 @@
         2. Add ts
         3. Add html
         4. Add css
+
+
+
 
 7. Tags Bar
     1. Create Tag model
@@ -61,7 +76,9 @@
         2. Add ts
         3. Add html
         4. Add css
-        
+
+
+
 8. Course page
     1. Add method to course service
     2. Generate Course Page component
@@ -71,6 +88,8 @@
         3. Add html
         4. Add css
 
+
+
 9. Cart Service Logic
     1. Create CartItem Model
     2. Create Cart Model
@@ -78,6 +97,8 @@
     4. Add Cart Button functionnality in Course page
     5. Generate >> ng g c components/pages/cart-page
         1. Add route
+
+
 
 10. Cart page and Date Picker
     1. Add ts
@@ -97,6 +118,8 @@
     5. Add css
     6. Update header component : inject cartService and subscribe to display real cartQuantity instead of mock data
 
+
+
 11. No result found
     1. Generate Not Found reusable components
         0. Generate >> ng g c components/partials/not-found
@@ -107,6 +130,8 @@
         1. Cart Page
         2. Home Page
         3. Course Page --> in case a bookmarked course is no longer available
+
+
 
 12. Basic Express Backend no database
     1. Create backend folder
@@ -131,6 +156,8 @@
     12. Add all the /api/courses APIs basicaly courseService from UI -> API
 
 
+
+
 13. Connect Front to Back
     1. Add urls.ts to frontend 2 have a single place to manage API urls
     2. Add HttpClientModule
@@ -140,6 +167,8 @@
         2. Course Page
         3. Tags Component
     5. Change Course Page to display on *ngIf="course"
+
+
 
 14. Login Page with Client side Validation (no css) && Login API with jwt
     1. Generate component >> ng g c components/pages/login-page
@@ -155,6 +184,8 @@
         4. import jwt from jsonwebtoken in server.ts && install @types/jsonwebtoken
         5. generateToken & return user API "/api/users/login"
         6. Test using postman
+
+
 
 15. User Service <3
     1. Generate User Service >> ng g s services/user
@@ -182,6 +213,7 @@
             7. cd /frontend && npm start
 
 
+
 16. Synchronising the header component
     1. Add Local Storage methods : set & get UserFromLocalStorage
     2. setUserToLocalStorage after successful login & get it by default for userSubject
@@ -189,6 +221,7 @@
     4. Hide LogIn from Header once we are loged in
     5. Add Logout Method
     6. Add userService.logout() to Header Component ts && update HTML to display accordingly
+
 
 
 17. Create Reusable Components for Text Input & Client side Validation + Add 2 Login Page
@@ -233,5 +266,20 @@
 
 
 
-
-
+18. Connect Backend to MongoDb Atlas
+    1. Moving APIs from server.ts to corresponding routers (more professional)
+    2. Create MongoDb Atlas (cloud instead of local install to avoid dealing with how to connect for diff systems)
+        *New Project > Build Db > FreeTier + AWS Fr Paris > Create Cluster > Add user & save password > Network Access > Deployment > Database > Connect > Connect 2 app> Save connection String*
+    3. Create .env file
+        1. Add URL for MongoDb > MONGO_URI=what u copied from 'Connect' button in the Cluster.
+        2. Install .env package for the .env file to work, check next step
+    4. Install packages
+        1. mongoose --> creating models and working with mangoDb (we want to avoid working with mangoDb     driver directly, otherwise we have to handel security and things of that nature by our selves )
+        2. dotenv --> so the .env file works
+        3. bcryptJs --> save the encripted passwords inside the database
+        4. jsonwebtoken --> alreay done
+        5. express-async-handler --> using default async in our APIs is not consistent enough it may fail or work & we don't need to deal with that this is a tuto baby we are learning
+        *npm install mongoose dotenv bcryptjs express-async-handler*
+    5. import dotenv in server.ts and call config function to access .env content through process.env.X
+    6. Create configs folder and database.config.ts file to export dbConnect()
+    7. Connect to MongoDb Atlas
