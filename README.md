@@ -267,10 +267,10 @@
 
 
 18. Connect Backend to MongoDb Atlas
-    1. Moving APIs from server.ts to corresponding routers (more professional)
+    1. Moving APIs from server.ts to corresponding src/routers/X.router.ts (more professional)
     2. Create MongoDb Atlas (cloud instead of local install to avoid dealing with how to connect for diff systems)
         *New Project > Build Db > FreeTier + AWS Fr Paris > Create Cluster > Add user & save password > Network Access > Deployment > Database > Connect > Connect 2 app> Save connection String*
-    3. Create .env file
+    3. Create src/.env file
         1. Add URL for MongoDb > MONGO_URI=what u copied from 'Connect' button in the Cluster.
         2. Install .env package for the .env file to work, check next step
     4. Install packages
@@ -281,5 +281,22 @@
         5. express-async-handler --> using default async in our APIs is not consistent enough it may fail or work & we don't need to deal with that this is a tuto baby we are learning
         *npm install mongoose dotenv bcryptjs express-async-handler*
     5. import dotenv in server.ts and call config function to access .env content through process.env.X
-    6. Create configs folder and database.config.ts file to export dbConnect()
+    6. Create src/configs folder and database.config.ts file to export dbConnect()
     7. Connect to MongoDb Atlas
+
+
+
+19. Mongoose Course & User Models
+    1. Add src/models/course.model.ts
+        1. Create and export an Interface of Course
+        *Copy eduEx.Ng.UI\src\app\shared\models\course.ts --> course.model.ts && get ride of the ! marks*
+        2. Create and export Schema of type Course
+        *To have id available set Virtuals (values not saved in the Db) by setting Virtuals to true Mongoose wil l set _id 2 id*
+        *4 When Created & Updated --> set timestamps to true*
+        3. Create and export model<Course>('course', CourseSchema)
+    2. Add src/models/user.model.ts
+        1. Create and export an Interface of User
+        *On the database we don't save the token but we have a password*
+        2. Create and export Schema of type User
+        3. Create and export model<User>('user', UserSchema)
+
