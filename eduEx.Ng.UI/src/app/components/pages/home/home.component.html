@@ -6,10 +6,10 @@
 <ul>
   <li *ngFor="let course of courses">
     <a routerLink="/course/{{course.id}}">
-      <img [src]="course.imageUrl" [alt]="getMentor(course.id)?.firstName">
+      <img [src]="course.imageUrl" [alt]="getMentor(course.userId)?.firstName">
       <div class="content">
         <div class="name">
-          {{getMentor(course.id)?.firstName + " " + getMentor(course.id)?.lastName}}
+          {{getMentor(course.userId)?.firstName + " " + getMentor(course.userId)?.lastName}}
         </div>
         <span class="favorite {{course.favorite?'':'not'}}">
           ❤

@@ -1,4 +1,16 @@
-3:59:33 / 7:25:33    =>     https://www.youtube.com/watch?v=NFh9WEH0Zi4
+4:12:17  / 7:25:33    =>     https://www.youtube.com/watch?v=NFh9WEH0Zi4
 
----> Landing page
----> Add map api airbnb style
+
+
+
+FUNCTIONNALITIES : 
+    --> home page
+        _ Mentor names by course should come from database with each course
+    --> course page
+        _ in HTML add sections to show course.aboutMentor + course.aboutCourse + course.$ ....
+        _ mentor info should come from db just like for the home page
+
+
+DESIGN :
+    ---> add Landing page
+    ---> add map api airbnb style 

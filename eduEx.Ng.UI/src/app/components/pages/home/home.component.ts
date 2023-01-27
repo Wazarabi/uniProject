@@ -15,13 +15,15 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeComponent {
   courses:Course[] = [];
   mentors:User[] = [];
-  getMentor = (userId:any) => { return this.mentors.find(user => user.id === userId)}
+
+  getMentor = (userId:any) => {return this.mentors.find(user => user.id === userId);}
 
   constructor(private courseService:CourseService,
               private userService:UserService,
               private activatedRoute:ActivatedRoute)
   {
     let courseObservable:Observable<Course[]>;
+    let userObservable:Observable<User[]>;
 
     activatedRoute.params.subscribe((params) => {
       if(params.searchTerm) {courseObservable = this.courseService.getAllCoursesBySearchTerm(params.searchTerm);}
@@ -32,7 +34,10 @@ export class HomeComponent {
         this.courses = nextCourses;
       })
     })
-    this.mentors = userService.getAllMentors();
-  }
 
+    userObservable = this.userService.getAllMentors();
+    userObservable.subscribe(nextMentors => {
+      this.mentors = nextMentors;
+    })
+  }
 }

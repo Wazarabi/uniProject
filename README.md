@@ -195,7 +195,7 @@
             1. Add User Urls constants/urls.ts
             2. Generate IUserLogin interface
             3. add login to user Service http.post(...
-               and pipe the result and tap(rxjs) it, tap returns same object so we still return an Observable<User>
+               and pipe the result and tap(rxjs) it, tap returns same object so we still return an Observable<*User*>
             4. Add ngx-toastr
                 1. npm install ngx-toastr
                 2. Import Module >> import { ToastrModule } from ngx-toastr';
@@ -229,7 +229,7 @@
         1. Generate >> ng g c components/partials/input-container
         2. add ts with label & bgColor Input()
         3. add html
-            1. add <ng-content></ng-content>
+            1. add <*ng-content*></*ng-content*>
             2. simplify selector app-input-container
         4. add css
         5. test that everything looks and works exactly as before
@@ -251,13 +251,13 @@
         1. Generate >> ng g c components/partials/text-input
         2. ts Add Input()s <-- Input()s from *Input Container* && *Input Validation*
         3. Add html just copy from login page
-            1. Add formControl getter this.control as FormControl (AbstractControl won't be accepted by the html <input>)
+            1. Add formControl getter this.control as FormControl (AbstractControl won't be accepted by the html <*input*>)
             2. input>formControlName="email" --> input>[formControl]="formControl"
             3. Simplify Selector app-text-input
         4. Add CSS
     4. Default Button
         1. Generate >> ng g c components/partials/default-button
-        2. Add component @Input()_s & @Output()
+        2. Add component @Input()_s & @Output() ->
         *#rq:EventEmitter from '@angular/core'; & NOT FROM 'stream'*
         3. Add html
         4. Simplify Selector app-default-button
@@ -268,7 +268,7 @@
 
 18. Connect Backend to MongoDb Atlas
     1. Moving APIs from server.ts to corresponding src/routers/X.router.ts (more professional)
-    2. Create MongoDb Atlas (cloud instead of local install to avoid dealing with how to connect for diff systems)
+    2. Create MongoDb Atlas (cloud instead of local install to avoid dealing with how to connect for diff systems) ->
         *New Project > Build Db > FreeTier + AWS Fr Paris > Create Cluster > Add user & save password > Network Access > Deployment > Database > Connect > Connect 2 app> Save connection String*
     3. Create src/.env file
         1. Add URL for MongoDb > MONGO_URI=what u copied from 'Connect' button in the Cluster.
@@ -278,8 +278,8 @@
         2. dotenv --> so the .env file works
         3. bcryptJs --> save the encripted passwords inside the database
         4. jsonwebtoken --> alreay done
-        5. express-async-handler --> using default async in our APIs is not consistent enough it may fail or work & we don't need to deal with that this is a tuto baby we are learning
-        *npm install mongoose dotenv bcryptjs express-async-handler*
+        5. express-async-handler --> using default async in our APIs is not consistent enough it may fail or work & we don't need to deal with that this is a tuto baby we are learning ->
+        *Terminal >> npm install mongoose dotenv bcryptjs express-async-handler*
     5. import dotenv in server.ts and call config function to access .env content through process.env.X
     6. Create src/configs folder and database.config.ts file to export dbConnect()
     7. Connect to MongoDb Atlas
@@ -288,15 +288,31 @@
 
 19. Mongoose Course & User Models
     1. Add src/models/course.model.ts
-        1. Create and export an Interface of Course
+        1. Create and export an Interface of Course ->
         *Copy eduEx.Ng.UI\src\app\shared\models\course.ts --> course.model.ts && get ride of the ! marks*
-        2. Create and export Schema of type Course
+        2. Create and export Schema of type Course -> 
         *To have id available set Virtuals (values not saved in the Db) by setting Virtuals to true Mongoose wil l set _id 2 id*
-        *4 When Created & Updated --> set timestamps to true*
-        3. Create and export model<Course>('course', CourseSchema)
+        *+  4 When Created & Updated --> set timestamps to true*
+        3. Create and export model<*Course*>('course', CourseSchema)
     2. Add src/models/user.model.ts
-        1. Create and export an Interface of User
+        1. Create and export an Interface of User ->
         *On the database we don't save the token but we have a password*
         2. Create and export Schema of type User
-        3. Create and export model<User>('user', UserSchema)
+        3. Create and export model<*User*>('user', UserSchema)
+
+
+
+20. Use Data from *MangoDb* instead of *data.ts*
+    1. import express-async-handler to handle all API responses for both routers (much more robust)
+    2. add the seeding apis in the corresponding routers : course & user
+    3. seed the database from browser localhost:5000/api/courses/seed *&&* /users/seed
+    4. change all APIs to use FoodModel & UserModel to interface with the dataBase instead of using data.ts file.  
+        1. start with course.router.ts APIs
+        2. beware *THIS IS TIME CONSUMING BE WARE*
+        3. **#rq! Keep in mind that We directly want to do the search in the Db**
+        4. now to the user.router.ts
+            1. Add API to get all mentors from database
+            2. Request All Mentors in Home Page
+            3. Add simple arrow fct in Home Page ts to filter mentors and get their first & last name by course
+    5. **make sure to change the userId in the each course entity in the database to the user id generated by mongodB and not the moke ones we started with !!**
 

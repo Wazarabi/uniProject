@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { sample_mentors } from './../../data';
 import { Injectable } from '@angular/core';
 import { User } from '../shared/models/User';
-import { USER_LOGIN_URL } from '../shared/constants/urls';
+import { USERS_MENTORS_BY_ID_URL, USERS_MENTORS_URL, USER_LOGIN_URL } from '../shared/constants/urls';
 import { ToastrService } from 'ngx-toastr';
 
 const USER_KEY = 'User';
@@ -23,10 +23,13 @@ export class UserService {
     this.userObservable = this.userSubject.asObservable();
    }
 
-  getAllMentors():User[]{
-    return sample_mentors;
+  getAllMentors():Observable<User[]>{
+    return this.http.get<User[]>(USERS_MENTORS_URL);
   }
 
+  // getMentorById(mentorId:string):Observable<User>{
+  //   return this.http.get<User>(USERS_MENTORS_BY_ID_URL + mentorId);
+  // }
 
   login(userLogin:IUserLogin):Observable<User>{
     return this.http.post<User>(USER_LOGIN_URL, userLogin).pipe(

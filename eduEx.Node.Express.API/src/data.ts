@@ -1,115 +1,25 @@
 export const sample_students: any[] = [
-  {id:"0", firstName:"David", lastName:"Garcia", email:"david.garcia@gmail.com", password:"12345",address:"Dallas", token:"", isAdmin:false, isMentor:false},
-  {id:"1", firstName:"Jane", lastName:"Smith", email:"jane.smith@gmail.com", password:"12345",address:"New York City", token:"", isAdmin:false, isMentor:false},
-  {id:"2", firstName:"John", lastName:"Doe", email:"johndoe@gmail.com", password:"12345", address:"Los Angeles", token:"", isAdmin:false, isMentor:false},
-  {id:"3", firstName:"Mike", lastName:"Johnson", email:"mikej@gmail.com", password:"12345", address:"Chicago", token:"", isAdmin:false, isMentor:false},
-  {id:"4", firstName:"Emily", lastName:"Williams", email:"emilyw@gmail.com", password:"12345", address:"Houston", token:"", isAdmin:false, isMentor:false},
-  {id:"5", firstName:"Jessica", lastName:"Jones", email:"jessica.jones@gmail.com", password:"12345", address:"Phoenix", token:"", isAdmin:false, isMentor:false},
-  {id:"6", firstName:"Jacob", lastName:"Brown", email:"jacobb@gmail.com",  password:"12345", address:"Philadelphia", token:"", isAdmin:false, isMentor:false},
-  {id:"7", firstName:"Nathan", lastName:"Davis", email:"nathan.davis@gmail.com", password:"12345", address:"San Antonio", token:"", isAdmin:false, isMentor:false},
-  {id:"8", firstName:"Ashley", lastName:"Miller", email:"ashleym@gmail.com", password:"12345", address:"San Diego", token:"", isAdmin:false, isMentor:false}
+  {id:"0", firstName:"David", lastName:"Garcia", email:"david.garcia@gmail.com", password:"12345",address:"Dallas", isAdmin:false, isMentor:false},
+  {id:"1", firstName:"Jane", lastName:"Smith", email:"jane.smith@gmail.com", password:"12345",address:"New York City", isAdmin:false, isMentor:false},
+  {id:"2", firstName:"John", lastName:"Doe", email:"johndoe@gmail.com", password:"12345", address:"Los Angeles", isAdmin:false, isMentor:false},
+  {id:"3", firstName:"Mike", lastName:"Johnson", email:"mikej@gmail.com", password:"12345", address:"Chicago", isAdmin:false, isMentor:false},
+  {id:"4", firstName:"Emily", lastName:"Williams", email:"emilyw@gmail.com", password:"12345", address:"Houston", isAdmin:false, isMentor:false},
+  {id:"5", firstName:"Jessica", lastName:"Jones", email:"jessica.jones@gmail.com", password:"12345", address:"Phoenix", isAdmin:false, isMentor:false},
+  {id:"6", firstName:"Jacob", lastName:"Brown", email:"jacobb@gmail.com",  password:"12345", address:"Philadelphia", isAdmin:false, isMentor:false},
+  {id:"7", firstName:"Nathan", lastName:"Davis", email:"nathan.davis@gmail.com", password:"12345", address:"San Antonio", isAdmin:false, isMentor:false},
+  {id:"8", firstName:"Ashley", lastName:"Miller", email:"ashleym@gmail.com", password:"12345", address:"San Diego", isAdmin:false, isMentor:false}
 ]
 
 export const sample_mentors: any[] = [
-  {
-    id:"0",
-    firstName:"Thompson",
-    lastName:"Davayne",
-    email:"Thompson.Davayne@gmail.com",
-    password:"12345",
-    address:"New York",
-    token:"",
-    isAdmin:false,
-    isMentor:true
-  },
-  {
-    id: "1",
-    firstName: "Alice",
-    lastName: "Johnson",
-    email: "alice.johnson@piano-voice.com",
-    password:"12345",
-    address: "New Jersey",
-    token: "",
-    isAdmin: false,
-    isMentor: true
-  },
-  {
-    id: "2",
-    firstName: "Bob",
-    lastName: "Williams",
-    email: "bob.williams@math.com",
-    password:"12345",
-    address: "Los Angeles",
-    token: "",
-    isAdmin: false,
-    isMentor: true
-  },
-  {
-    id: "3",
-    firstName: "Charlie",
-    lastName: "Jones",
-    email: "charlie.jones@programming.com",
-    password:"12345",
-    address: "Chicago",
-    token: "",
-    isAdmin: false,
-    isMentor: true
-  },
-  {
-    id: "4",
-    firstName: "David",
-    lastName: "Brown",
-    email: "david.brown@history.com",
-    password:"12345",
-    address: "Houston",
-    token: "",
-    isAdmin: false,
-    isMentor: true
-  },
-  {
-    id: "5",
-    firstName: "Edward",
-    lastName: "Miller",
-    email: "edward.miller@fitness.com",
-    password:"12345",
-    address: "Philadelphia",
-    token: "",
-    isAdmin: false,
-    isMentor: true
-  },
-  {
-    id: "6",
-    firstName: "Olga",
-    lastName: "Moore",
-    email: "frank.moore@cooking.com",
-    password:"12345",
-    address: "New Port",
-    token: "",
-    isAdmin: false,
-    isMentor: true
-  },
-  {
-    id: "7",
-    firstName: "George",
-    lastName: "Taylor",
-    email: "george.taylor@design.com",
-    password:"12345",
-    address: "San Francisco",
-    token: "",
-    isAdmin: false,
-    isMentor: true
-  },
-  {
-    id: "8",
-    firstName: "Henrietta",
-    lastName: "Anderson",
-    email: "henry.anderson@photography.com",
-    password:"12345",
-    address: "Los Angeles",
-    token: "",
-    isAdmin: false,
-    isMentor: true
-  }
+  {id:"0", firstName:"Thompson", lastName:"Davayne", email:"Thompson.Davayne@gmail.com", password:"12345", address:"New York", isAdmin:false, isMentor:true},
+  {id:"1", firstName:"Alice", lastName:"Johnson", email:"alice.johnson@piano-voice.com", password:"12345", address: "New Jersey", isAdmin:false, isMentor:true},
+  {id:"2", firstName:"Bob", lastName:"Williams", email:"bob.williams@math.com", password:"12345", address:"Los Angeles", isAdmin:false, isMentor:true},
+  {id:"3", firstName:"Charlie", lastName:"Jones", email:"charlie.jones@programming.com", password:"12345", address:"Chicago", isAdmin:false, isMentor:true},
+  {id:"4", firstName:"David", lastName:"Brown", email:"david.brown@history.com", password:"12345", address:"Houston", isAdmin:false, isMentor:true},
+  {id:"5", firstName:"Edward", lastName:"Miller", email:"edward.miller@fitness.com", password:"12345", address:"Philadelphia", isAdmin:false, isMentor:true},
+  {id:"6", firstName:"Olga", lastName:"Moore", email:"frank.moore@cooking.com", password:"12345", address:"New Port", isAdmin:false, isMentor:true},
+  {id:"7", firstName:"George", lastName:"Taylor", email:"george.taylor@design.com", password:"12345", address:"San Francisco", isAdmin:false, isMentor:true},
+  {id:"8", firstName:"Henrietta", lastName:"Anderson", email:"henry.anderson@photography.com", password:"12345", address:"Los Angeles", isAdmin:false, isMentor:true}
 ]
 
 export const sample_users: any[] = sample_mentors.concat(sample_students);

@@ -2,6 +2,7 @@ export class Course{
   id!: string;
   userId!:string;
 
+  mentorFullName?:string;
   title!: string;
   aboutCourse!: string;
   aboutUser!: string;
