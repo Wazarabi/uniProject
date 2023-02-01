@@ -1,5 +1,12 @@
-4:12:17  / 7:25:33    =>     https://www.youtube.com/watch?v=NFh9WEH0Zi4
+4:52:25  / 7:25:33    =>     https://www.youtube.com/watch?v=NFh9WEH0Zi4
 
+
+
+
+
+
+BUGS TO FIX :
+    --> confirmPass validor should not be empty bug -- DONE
 
 
 

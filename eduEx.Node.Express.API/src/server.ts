@@ -11,7 +11,7 @@ dbConnect();
 
 const app = express();
 
-app.use(express.json());
+app.use(express.json()); // middleware for parsing request body as JSON
 
 app.use(cors({
     credentials : true,

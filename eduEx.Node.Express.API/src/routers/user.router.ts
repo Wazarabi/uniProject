@@ -1,8 +1,10 @@
-import { UserModel } from './../models/user.model';
+import { User, UserModel } from './../models/user.model';
 import { Router } from 'express';
 import jwt from "jsonwebtoken";
 import { sample_users } from '../data';
 import expressAsyncHandler from 'express-async-handler';
+import { HTTP_BAD_REQUEST } from '../constants/http_status';
+import bcrypt from 'bcryptjs';
 
 const router = Router();
 
@@ -41,10 +43,41 @@ router.post("/login",expressAsyncHandler(
         if(user){
             res.send(generateTokenResponse(user));
         }else{
-            res.status(400).send("User name or password is not valide, try again please.");
+            res.status(HTTP_BAD_REQUEST).send("User name or password is not valide, try again please.");
         }
     }
 ))
+
+router.post("/register", expressAsyncHandler(
+    async (req, res) => {
+        const {firstName, lastName, email, password, address} = req.body;
+        const user = await UserModel.findOne({email}); //email is unique according to dB schema defined earlier
+        if (user){
+            res.status(HTTP_BAD_REQUEST).send('User already exists, please login');
+            return;
+        }
+
+        // encrypt | hash the password before saving to the Db + 10 as the salt of the hash basicaly how hard u want it (ocntrainte : ressources)
+        const encryptedPassword = await bcrypt.hash(password, 10);
+
+        // id will be generated automaticaly anyway in the Db
+        const newUser: User = {
+            id:'',
+            firstName,
+            lastName,
+            email: email.toLowerCase(),
+            password: encryptedPassword,
+            address,
+            isAdmin : false,
+            isMentor : false,
+        }
+
+        const dbUser = await UserModel.create(newUser);
+        res.send(generateTokenResponse(dbUser));
+    }
+))
+
+
 
 const generateTokenResponse = (user:any) => {
     const token = jwt.sign({

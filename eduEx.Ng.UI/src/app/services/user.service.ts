@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { IUserLogin } from './../shared/interfaces/IUserLogin';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
-import { sample_mentors } from './../../data';
 import { Injectable } from '@angular/core';
 import { User } from '../shared/models/User';
-import { USERS_MENTORS_BY_ID_URL, USERS_MENTORS_URL, USER_LOGIN_URL } from '../shared/constants/urls';
+import { USERS_MENTORS_URL, USER_LOGIN_URL, USER_REGISTER_URL } from '../shared/constants/urls';
 import { ToastrService } from 'ngx-toastr';
+import { IUserRegister } from '../shared/interfaces/IUserRegister';
 
 const USER_KEY = 'User';
 
@@ -13,15 +13,20 @@ const USER_KEY = 'User';
   providedIn: 'root'
 })
 export class UserService {
+
   private userSubject = new BehaviorSubject<User>(this.getUserFromLocalStorage());
   public userObservable:Observable<User>;
 
-  constructor(private http:HttpClient,
-    private toastService:ToastrService) {
+  constructor
+  (
+    private http:HttpClient,
+    private toastService:ToastrService
+  )
+  {
     // what we want to expose outside the userService is the :
     // readonly version of the BehaviorSubject aka :
     this.userObservable = this.userSubject.asObservable();
-   }
+  }
 
   getAllMentors():Observable<User[]>{
     return this.http.get<User[]>(USERS_MENTORS_URL);
@@ -55,6 +60,24 @@ export class UserService {
     // we can pipe our observable with tje tap function RXJS
   }
 
+  register(userRegister:IUserRegister):Observable<User>{
+    return this.http.post<User>(USER_REGISTER_URL,userRegister).pipe(
+      tap({
+        next : (user) => {
+          this.setUserToLocalStorage(user);
+          this.userSubject.next(user); //notify all the Observables
+          this.toastService.success(
+            `Welcome to Foodmine ${user.firstName}`,
+            'Register Successful'
+          )
+        },
+        error: (errorResponse) => {
+          this.toastService.error(errorResponse.error,
+            'Registering has Failed ...');
+        }
+      })
+    )
+  }
 
   logout(){
     this.userSubject.next(new User());
