@@ -366,3 +366,31 @@
     5. Test the register functionnality
 
 
+
+22. Spinner when loading data from Server
+    1. Add UI/src/assets/loading.svg
+    2. Only Generate the loading component for the moment >> *ng g c components/partials/loading*
+    3. Start with Loading service which will give us methods & observables to *watch* and *change* the loading state
+        1. Generate >> *ng g s services/loading*
+        2. Add a private BehaviorSubject of type *boolean* default to false
+        3. Add 2 methods to set the BehaviorSubject to true/false 
+        4. Add a getter isLoading() returns the BehaviorSubject as an Observable
+    4. Back to the loading component where we ll use the loadingService
+        1. TS : Subscribe to loadingService isLoading Observable and update local state isLoading.
+        2. HTML : simple div.container > div.details > img & h1
+        3. Add *<app-loading/>* to the root of the project **app.component.html**
+        4. Test: in **loading.component.ts** make a *loadingService.showLoading()* call
+        5. Add CSS
+    5. How do we know when to show or hide the loading ? **ANGULAR INTERCEPTORS** *FYI: kinda like React Middleware* **: An HTTP interceptor in Angular is a feature that lets you capture outgoing HTTP requests and incoming HTTP responses, and perform some action on them. The intercept method takes a request and a next object as parameters. The next object is an instance of the *HttpHandler* class, which represents the next step in the processing of the HTTP request. To continue processing the request, you need to call *next.handle(req)*, passing in the original request as a parameter.**
+        1. Generate >> *ng g interceptor shared/interceptors/loading*
+        2. App module 
+            1. Add *import { HTTP_INTERCEPTORS } from '@angular/common/http';*
+            2. Add the interceptor to the app module providers: *providers: [{provide:HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi:true}],*
+        3. Loading.interceptor.ts
+            1. Add an *alert('alert coming from interceptor')* to TEST functionnality.
+            2. Add a Global var *pendingRequests* set to 0, the idea is to show the loading untill all pending requests are finished.
+            3. Show loading when ever u intercept a *request* and increase the nbr of pendingRequests by 1.
+            4. The result of calling *next.handle(req)* is an Observable that emits the HTTP response.
+               The returned Observable is piped through the tap operator, which allows us to perform actions on the emitted values of the observable without affecting the original stream.
+               So we can perform actions when the response arrives, such as decreasing the number of pendingRequests by 1 and hiding the loading spinner when all requests have been answered.
+        4. TEST everything !

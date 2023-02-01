@@ -1,12 +1,10 @@
-4:52:25  / 7:25:33    =>     https://www.youtube.com/watch?v=NFh9WEH0Zi4
+5:04:10 / 7:25:33   =>     https://www.youtube.com/watch?v=NFh9WEH0Zi4
 
 
 
 
 
 
-BUGS TO FIX :
-    --> confirmPass validor should not be empty bug -- DONE
 
 
 
@@ -21,3 +19,8 @@ FUNCTIONNALITIES :
 DESIGN :
     ---> add Landing page
     ---> add map api airbnb style 
+
+
+
+BUGS TO FIX :
+    DONE --> confirmPass validor should not be empty bug
